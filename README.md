@@ -102,3 +102,9 @@ Array
 ```
 
 this output.
+
+### xampp is running at 3038 port instead of 3036. When i try to change the port is doesnot allow saying:
+
+```
+Cannot bind to port 3036.It is probably taken by another application or you don't have enough priviliges.
+```
