@@ -1,24 +1,19 @@
 <?php
 
-if($_SERVER['REQUEST_METHOD']=='POST'){
-    $id = $_POST['id'];
-    $name = $_POST['name'];
-    $address = $_POST['address'];
-    $contact = $_POST['contact'];
-    echo $id;
-    echo $name;
-    echo $contact;
-    // die();
+if($_SERVER['REQUEST_METHOD']=='GET'){
+    $id = $_GET['id'];
 
     include "database.php";
 
     try {
-        $sql = "UPDATE student set student_name='$name', address='$address', contact_number='$contact' WHERE id=$id";
+        $sql = "DELETE FROM student WHERE id=$id";
 
         $result = $connection->query($sql);
     
         if($result){
-            echo "Data updated successfully.";
+            session_start();
+            $_SESSION['success'] = "Data deleted successfully.";
+            echo "Data deleted successfully.";
             header("Location: /php-crud/index.php");
             // exit();
         }else{
