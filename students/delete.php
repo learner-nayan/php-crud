@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
             session_start();
             $_SESSION['success'] = "Data deleted successfully.";
             echo "Data deleted successfully.";
-            header("Location: /php-crud/index.php");
+            header("Location: /php-crud");
             // exit();
         }else{
             echo "Error: ".$connection->error;
